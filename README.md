@@ -1,6 +1,6 @@
 #Video store
 
-================
+
 setup
 
 1.install python2.7 for windows. (use default setting)
@@ -22,7 +22,7 @@ setup
 	
 
 ##HOW TO USE
-========
+
 
 
 
@@ -36,7 +36,6 @@ setup
 
 
 ##OTHER
-=====
 
 * Nothing
 
