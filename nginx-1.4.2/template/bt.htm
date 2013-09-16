@@ -69,7 +69,7 @@
     <div class="container-fluid">
       <div class="row-fluid">
 {% for v in videos %}
-      <div class="span9"><a href="/static/videos/{{v.decode('gb2312')}}">{{v.decode('gb2312')}}</a></div>
+      <div class="span9"><a href="/static/videos/{{v.path.decode('gb2312')}}">{{v.display_name.decode('gb2312')}}</a></div>
 {% endfor %}
       </div>
     <div class="container-fluid">

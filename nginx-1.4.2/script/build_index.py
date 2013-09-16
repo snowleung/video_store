@@ -6,7 +6,7 @@ from jinja2 import Template
 page_count = 12 #how many item in a page
 temp_file_path = "D:\\websites\\nginx-1.4.2\\template\\bt.htm"
 output_file_dir = "D:\\websites\\nginx-1.4.2\\html"
-videos_dir = "D:\\websites\\nginx-1.4.2\\static\\videos"
+videos_dir = "D:\\websites\\nginx-1.4.2\\static\\videos\\"
 ext_filter = ['.mp4','.m4v']
 
 def build_index(video_list):
@@ -44,16 +44,22 @@ def calc_page(video_list):
             pages_count = pages_count + 1 # the last page
     print "this has %i page" % pages_count
     return pages_count
-        
+
+class Video_data:
+    path = ""
+    display_name = ""
 
 if __name__ == "__main__":
-
-    fs_raw = []
-    for d, x, fs in os.walk(videos_dir):
-        fs_raw = fs_raw + fs
-    videos = [f for f in fs_raw if os.path.splitext(f)[1] in  ext_filter]
-#    print videos
-#    print fs_raw
+    videos = []
+    for r, d, fs in os.walk(videos_dir):
+        for f in fs:
+            if os.path.splitext(f)[1] not in ext_filter:
+                continue
+            v = Video_data()
+            p = r.replace(videos_dir,"")
+            v.path = os.path.join(p,f)
+            v.display_name = f
+            videos.append(v)
 #    print videos
     build_index(videos)
     print "finish"
