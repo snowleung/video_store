@@ -41,4 +41,5 @@ setup
 
 ##CHANGELOG
 
+* 2013-09-16 : support directory at videos
 * 2013-09-10 : init ,upload Readme
